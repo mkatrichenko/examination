@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){e(function(){e(".menu__icon").on("click",function(){e(this).closest(".menu").toggleClass("menu_state_open")})}),e(".feedback-slider").slick({infinite:!0,arrows:!1,slidesToScroll:1,dots:!0,adaptiveHeight:!0})});

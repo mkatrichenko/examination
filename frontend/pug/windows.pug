@@ -1,0 +1,228 @@
+html(lang='en')
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Windows
+		link(href='./fonts/FA/fontawesome-all.css', rel='stylesheet')
+		script(defer src="./fonts/FA/fontawesome-all.js")
+		link(rel='stylesheet', href='css/style.css')
+		link(rel="stylesheet" type="text/css" href="slick/slick.css")
+	body
+		.header
+			.header-top
+				.wrapper(class ='container')
+					a.find Find Your Local Storm Guard!
+					ul.menu
+						li.menu__item
+							a( href="./index.html") Home
+						li.menu__item
+							a(href='./whowe.html') Who We Are
+							.dropdown
+								.dropdown__item
+									a FAQ
+								.dropdown__item
+									a Photo Gallery
+								.dropdown__item
+									a(href='./franch.html') Become a Franchisee
+								.dropdown__item
+									a Carees
+						li.menu__item
+							a Services
+						li.menu__item
+							a Blog
+						li.menu__item
+							a Locations
+			.header-bottom
+				.wrapper(class ='container')
+					.logo
+						img(src='./img/logo.png')
+					ul.submenu
+						li.submenu__item
+							a(class='active') Residential
+						li.submenu__item
+							a Commerical
+						li.submenu__item
+							a Insurance Claims
+						li.submenu__item
+							a Why Storm Guard?
+						li.submenu__item
+							a What People Think
+						li.submenu__item
+							a Contact
+					ul.menu
+						.menu__icon
+							i(class="fas fa-bars")
+						.menu__container
+							li.menu__item
+								a(class='active') Residential
+							li.menu__item
+								a Commerical
+							li.menu__item
+								a Insurance Claims
+							li.menu__item
+								a Why Storm Guard?
+							li.menu__item
+								a What People Think
+							li.menu__item
+								a Contact
+							li.menu__item
+								a(href="./index.html") Home
+							li.menu__item
+								a(href='./whowe.html') Who We Are
+							li.menu__item
+								a Services
+							li.menu__item
+								a Blog
+							li.menu__item
+								a Locations
+		.page
+			section.banner-short
+			section.nav
+				.wrapper(class ='container')
+					.breadcrumbs
+						a.breadcrumbs__item(href="./index.html") Home
+						span.breadcrumbs__divider >
+						a.breadcrumbs__item Residential
+						span.breadcrumbs__divider >
+						a.breadcrumbs__item-active Windows
+			section.article
+				.wrapper(class ='container')
+					.avatar
+						img(src='./img/windows-worker.png')
+					.text-block
+						h3.title Windows
+						p.description.
+							The right windows can make your home – helping frame your home’s overall look and determine your level of energy efficiency. Our no-obligation damage inspection will determine if your windows are damaged or leaky and in need of replacement.
+						p.description.
+							Our team of professionals handles and installs quality products from America’s most trusted window and glass companies, such as Simonton Windows. Offering a lifetime manufacturer’s warranty, Simonton Windows are available in a variety of styles and sizes, and are made from the highest quality materials available today, including Low Emissivity (Low E) and Argon gas.
+						p.description.
+							Whether you choose windows that are wood or vinyl, single or double hung, our Storm Guard team will install your new or replacement windows right the first time. You can always count on quality construction, premium aesthetics, and energy efficiency, all with the finish options and hardware you need for your application.
+			section.services
+				.text-block
+					h3.title View Our Other Services
+					h4.description.
+						From home upgrades to storm restoration, Storm Guard offers 
+						a range of services to help you with your home.
+				.wrapper(class ='container')
+					.services__item
+						a.avatar
+							img(src='./img/siding.png')
+						.services__item-textblock
+							.title Roofing
+							.description.
+								Your roof protects your home and family. Turn to a professional when it needs replacement – turn to Storm Guard.
+					.services__item
+						a.avatar
+							img(src='./img/paint.png')
+						.services__item-textblock
+							.title Gutters
+							.description.
+								Gutters don’t just handle rain – they also 
+								catch leaves, twigs, snow and, depending on 
+								where you live, ice.
+					.services__item
+						a.avatar
+							img(src='./img/siding.png')
+						.services__item-textblock
+							.title Siding
+							.description.
+								We specialize in residential siding installation and commit ourselves to providing the highest quality siding products to our customers.
+					.services__item
+						a.avatar
+							img(src='./img/paint.png')
+						.services__item-textblock
+							.title Paint
+							.description.
+								Painting is the important “finishing touch” on a job well done. Storm Guard’s team of professional painting experts provides a variety of painting services.
+					.services__item
+						a.avatar
+							img(src='./img/paint.png')
+						.services__item-textblock
+							.title Emergency Tarping
+							.description.
+								Storm Guard offers emergency tarping services that have helped give homeowners the peace of mind they need until their damage is fully restored.
+					.line(class='container')
+			section.works
+				.text-block
+					h3.title Ready To Get Started?
+					h4.description.
+						Damage to your home or business from a storm? 
+						Looking to replace your old roof or siding? Get Started below!
+				.wrapper(class ='container')
+					.works__item
+						.works__item-avatar
+							img(src="./img/service1.png")
+						.works__item-link
+							p Residential Repair
+					.works__item
+						.works__item-avatar
+							img(src="./img/service2.png")
+						.works__item-link
+							p Commercial Repair
+					.works__item
+						.works__item-avatar
+							img(src="./img/service3.png")
+						.works__item-link
+							p Insurance Claims
+			section.search(id='search2')
+				.wrapper(class ='container')
+					.text-block
+						h3.title.
+							Find A Franchise Near You
+						p.description.
+							Want to speak to us in person? Enter 	your zip code to find the nearest 	franchise.
+					form.input-block
+						input(placeholder='Enter Zip Code')
+						a.search-btn Submit
+			section.contact-block(class='new')
+				.wrapper(class ='container')
+					.contact
+						.text
+							.title Contact Us Today
+							.description.
+								Need more information about our services or insurance claims? Select who from Storm Guard you would like information from and fill the out form. 
+						form
+							a.footer-btn Contact Your Local Storm Guard Franchise
+							a.footer-btn Contact the Storm Guard Corporate Office
+					.gallery
+						.text
+							.title Check Out Our Past Projects
+							.description.
+								Want to see examples of our past work? Check out the gallery below to see projects we have completed in the past.
+						.box
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+							.gallery__item
+								img(src='./img/house.png')
+		.footer
+			.wrapper(class ='container')
+				.copyright
+					p.
+						Copyright 2017. Storm Guard. All Rights Reserved. Website Produced by: 
+					a Inverse Paradox
+				ul.footer-menu
+					li
+						a Customer Service
+					li
+						a Careers
+					li
+						a Terms & Conditions
+					li
+						a Privacy Policy
+					li
+						a Sitemap
+		script(src="./js/jquery-3.2.1.min.js")
+		script(type="text/javascript" src="./slick/slick.min.js")
+		script(src="./js/index.js")

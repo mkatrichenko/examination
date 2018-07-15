@@ -1,0 +1,52 @@
+.breadcrumbs {
+  font-size: 14px;
+  text-transform: capitalize;
+  border-bottom: 1px solid #d4d4d4;
+  padding: 15px 0 16px;
+  margin-bottom: 27px; }
+  .breadcrumbs .post {
+    font-size: 14px;
+    color: #dc3430;
+    display: inline;
+    text-decoration: underline;
+    padding: 0 14px; }
+  .breadcrumbs .home {
+    font-size: 14px;
+    color: #dc3430;
+    display: inline;
+    text-decoration: underline;
+    padding: 0 14px; }
+  .breadcrumbs span[property="itemListItem"] {
+    margin-top: 100px;
+    color: red;
+    display: none; }
+    .breadcrumbs span[property="itemListItem"] a span {
+      font-size: 14px;
+      color: #dc3430;
+      display: inline;
+      text-decoration: underline;
+      padding: 0 14px; }
+    .breadcrumbs span[property="itemListItem"] a span:hover {
+      text-decoration: none; }
+    .breadcrumbs span[property="itemListItem"] a span:last-of-type {
+      text-decoration: none;
+      color: black;
+      cursor: default; }
+
+.breadcrumbs__item {
+  font-size: 14px;
+  color: #dc3430;
+  display: inline;
+  text-decoration: underline; }
+  .breadcrumbs__item-active {
+    text-decoration: none;
+    color: black;
+    cursor: default; }
+  .breadcrumbs__item:hover {
+    text-decoration: none; }
+
+.breadcrumbs__divider {
+  display: inline-block;
+  padding: 0 14px;
+  color: black !important;
+  text-decoration: none !important; }

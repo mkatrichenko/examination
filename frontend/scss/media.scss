@@ -1,0 +1,417 @@
+@import 'mixines';
+
+@media only screen and (max-width : 1200px){
+		.container{
+			max-width: 960px;
+		}
+}
+
+@media only screen and (max-width : 968px){
+	.container{
+		max-width: 738px;
+	}
+	
+	.header{
+		.header-bottom{
+			.wrapper{
+				.submenu{
+					flex-wrap: wrap;
+					justify-content: flex-end;
+					&__item{
+						margin-right: 0;
+						margin-left: 15px;
+						margin-top: 7.5px;
+						a{
+							font-size: 12px;
+							max-width: 75px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.page{
+		
+		.search{
+			
+			.wrapper{
+				flex-wrap: wrap;
+				padding: 0 10px;
+			}
+		}
+		
+		.contact-block{
+			.wrapper{
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				.contact{
+					width: 90%;
+					border: none;
+					form{
+						margin-bottom: 70px;
+						input{
+							width: 100%;
+						}
+					}
+				}
+				.gallery{
+					width: 90%;
+				}
+			}
+		}
+		
+		.advertisement{
+			
+			.wrapper{
+				box-sizing: border-box;
+				flex-wrap: wrap;
+				
+				.left{
+					padding: 35px 0;
+				}
+			}
+		}
+		
+		.article{
+			
+			.franchisee{
+				.avatar{
+					width: 50%;
+				}
+			}
+		}
+	}
+		
+}
+
+@media only screen and (max-width : 768px){
+	.container{
+		box-sizing: border-box;
+		padding: 0 5%;
+	}
+	
+	.header{
+	.header-top{
+		padding: 0 15px;
+		.wrapper{
+			.menu{
+				display: none;
+			}
+		}
+	}
+	.header-bottom{
+		padding: 0 15px;
+		.wrapper{
+			.menu{
+				display: block;
+				//width: 35px;
+				margin-right: 15px;
+				.menu__icon{
+					display: block;
+					width: 35px;
+					height: 50px;
+					cursor: pointer;
+					
+					text-align: right;
+					svg{
+						color: yellow;
+						font-size: 40px;
+					}
+					i{
+						color: yellow;
+						font-size: 40px;
+					}
+					.fas{
+						color: yellow;
+						font-size: 40px;
+					}
+				}
+			}
+			.menu_state_open{
+				display: block;
+				position: relative;
+				margin-top: 0;
+				.menu__container{
+					position: absolute;
+					right: 25px;
+					top: 50px;
+					display: flex;
+					flex-direction: column;
+					width: 250px;
+					background-color: black;
+					padding: 0 20px;
+					//margin-top: 350px;
+					.menu__item{
+						@include text-style (#fff, 14px, 700, 1);
+						font-family: 'Helvetica';
+						cursor: pointer;
+						width: 100%;
+						
+						
+						a{
+							@include text-style (#fff, 14px, 700, 1);
+							font-family: 'Helvetica';
+							display: block;
+							transition: 0.4s all ease-out;
+							border-bottom: 1px solid rgba(255,255,255,0.3);
+							width: 100%; 
+							padding: 14px 0;
+							
+						}
+						a:hover{
+							color: #ffdd00;
+						}
+					}
+				}
+			}
+			.submenu{
+				display: none;
+			}
+		}
+	}
+	}
+	.banner{
+		padding: 15px;
+		box-sizing: border-box;
+		.wrapper{
+			.content{
+				width: 95%;
+			}
+		}
+	}
+	.page{
+		.search{
+			.wrapper{
+				.text-block{
+					width: 100%;
+				}
+			}
+		}
+		.services{
+			
+			.wrapper{
+				justify-content: center;
+				align-items: center;
+				.services__item{
+					width: 100%;
+					
+				}
+			}
+		}
+		.works{
+			
+			.wrapper{
+				
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				.works__item{
+					width: 100%;
+				}
+			}
+		}
+		.news{
+			.wrapper{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.news__item{
+					width: 50%;
+					margin-bottom: 50px;;
+				}
+			}
+		}
+		
+		
+		.article{
+			
+			.wrapper{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				.avatar{
+					width: 100%;
+					//padding: 0 25px;
+					box-sizing: border-box;
+				}
+				.text-block{
+					width: 100%;
+					//padding: 0 25px;
+					padding-top: 35px;
+					box-sizing: border-box;
+				}
+			}
+			.franchisee{
+				flex-direction: column-reverse;
+				
+				.avatar{
+					padding: 0;
+					margin: 0;
+				}
+			}
+		}
+	}
+	.footer{
+		padding-bottom: 0px;
+			.wrapper{
+				justify-content: center;
+				align-items: center;
+				flex-wrap: wrap;
+				.copyright{
+					width: 90%;
+					
+				}
+				.footer-menu{
+					width: 90%;
+				}
+			}
+	}
+	
+}
+
+@media only screen and (max-width : 600px){
+	
+	.banner{
+		.wrapper{
+			.content{
+				padding: 40px;
+			}
+		}
+	}
+	
+	form{
+		label.selectGeneral{
+			font-size: 12px;
+		}
+		label.selectGeneral:before{
+			font-size: 12px;
+			
+		}
+		label.selectGeneral:after{
+			background: url(../img/red-arrow.png) no-repeat;
+			width: 17px;
+		}
+		label.selectGeneral label{
+			font-size: 12px;
+		}
+	}
+}
+
+@media only screen and (max-width : 480px){
+	.text-block{
+		width: 80%;
+	}
+	
+	.header{
+		.header-bottom{
+			width: 100%;
+			box-sizing: border-box;
+			.wrapper{
+				max-width: none;
+				width: 100%;
+			}
+		}
+	}
+	
+	.banner{
+		padding: 7.5px;
+		box-sizing: border-box;
+		.wrapper{
+			width: 100%;
+			.content{
+				width: 100%;
+				//box-sizing: border-box;
+				padding: 25px 15px;
+				.text{
+					
+					p{
+						font-size: 20px;
+					}
+					span{
+						font-size: 20px;
+					}
+				}
+				.btn{
+					padding: 12px 14px;
+				}
+			}
+		}
+	}
+	
+	
+	.page{
+		
+		.search{
+			
+			.wrapper{
+				padding: 0 15px;
+				.text-block{
+					padding-top: 80px;
+					padding-left: 0;
+					width: 100%;
+					margin-bottom: 12px;
+					background: url(../img/marker.png) top-center no-repeat;
+					background-position-x: center;
+					//box-sizing: border-box;
+					.title{
+						font-size: 30px;
+						line-height: 1;
+					}
+					p{
+						margin: 0;
+						
+					}
+				}
+				.input-block{
+					margin-left: 0;
+					flex-wrap: wrap;
+					input{
+						width: 100%;
+						&::-webkit-input-placeholder{
+							font-size: 14px;
+						}
+					}
+					.search-btn{
+						
+					}
+				}
+			}
+		}
+		.feedback{
+			.wrapper{
+				.feedback-slider{
+					padding: 15px;
+					.slide{
+						height: 500px;
+						.description{
+							font-size: 14px;
+						}
+					}
+				}
+				
+			}
+		}
+		.news{
+			.wrapper{
+			
+				.news__item{
+					width: 100% !important;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width : 400px){
+
+}
+
+
+
+
+
+
+
+
