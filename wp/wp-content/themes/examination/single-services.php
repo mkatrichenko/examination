@@ -6,7 +6,7 @@
 			background-size: cover;
 		}
 		.page .search .wrapper .text-block {
-			<?php $searchImg = get_field('search_image');?>
+			<?php $searchImg = get_field('search_image', 'option');?>
   			background: url('<?php echo $searchImg['url']; ?>') no-repeat;
 		}
 	</style>
@@ -47,7 +47,7 @@
 				
  				<div class="services__item">
 					<a class="avatar" href="<?php the_permalink(); ?>">
-           				<img src="<?php $service_img = get_field('image');echo $service_img['url'];?>"/>
+           				<?php the_post_thumbnail(); ?>
         			</a>
         			<div class="services__item-textblock">
 						<div class="title"><?php the_title();?></div>
@@ -73,7 +73,7 @@
 				$works_loop = new WP_Query( $works_args );
 			  	$save = $post;
 				while ( $works_loop->have_posts() ) : $works_loop->the_post();?>
-				<div class="works__item">
+				<div class="works__item  grid">
             		<div class="works__item-avatar">
             			<img src="<?php $works_img = get_field('works_image');echo $works_img['url'];?>"/>
             		</div>
@@ -87,12 +87,12 @@
       <section class="search" id="search2">
         <div class="wrapper container">
           <div class="text-block">
-            <h3 class="title"><?php the_field('search_title')?></h3>
-            <p class="description"><?php the_field('search_description')?></p>
+            <h3 class="title"><?php the_field('search_title', 'option')?></h3>
+            <p class="description"><?php the_field('search_description', 'option')?></p>
           </div>
           <form class="input-block">
-            <input placeholder="<?php the_field('search_input');?>"/>
-            <a class="search-btn"><?php the_field('search_button');?></a>
+            <input placeholder="<?php the_field('search_input', 'option');?>"/>
+            <a class="search-btn"><?php the_field('search_button', 'option');?></a>
           </form>
         </div>
       </section>
@@ -100,18 +100,18 @@
         <div class="wrapper container">
           <div class="contact">
             <div class="text">
-              <div class="title"><?php the_field('contact_title')?></div>
-              <div class="description"><?php the_field('contact_subtitle')?></div>
+              <div class="title"><?php the_field('contact_title', 'option')?></div>
+              <div class="description"><?php the_field('contact_subtitle', 'option')?></div>
             </div>
             <form>
-            	<a class="footer-btn"><?php the_field('contact_button_2')?></a>
-            	<a class="footer-btn"><?php the_field('contact_button_3')?></a>
+            	<a class="footer-btn"><?php the_field('contact_button_2', 'option')?></a>
+            	<a class="footer-btn"><?php the_field('contact_button_3', 'option')?></a>
             </form>
           </div>
           <div class="gallery">
             <div class="text">
-              <div class="title"><?php the_field('gallery_title')?></div>
-              <div class="description"><?php the_field('gallery_subtitle')?></div>
+              <div class="title"><?php the_field('gallery_title', 'option')?></div>
+              <div class="description"><?php the_field('gallery_subtitle', 'option')?></div>
             </div>
             <div class="box">
               <?php 	$args = array( 'post_type' => 'gallery', 'posts_per_page' => 10 );

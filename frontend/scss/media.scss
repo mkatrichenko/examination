@@ -28,6 +28,14 @@
 		}
 	}
 	
+	.banner{
+		.wrapper{
+			.content{
+				width: 61%;
+			}
+		}
+	}
+	
 	.page{
 		
 		.works{
@@ -164,6 +172,15 @@
 				}
 			}
 		}
+		
+		.news{
+			.wrapper{
+				.news__item{
+					margin-right: 0 !important;
+					padding: 5px;
+				}
+			}
+		}
 	}
 		
 }
@@ -260,11 +277,11 @@
 	}
 	}
 	.banner{
-		padding: 15px;
+		padding: 15px 0;
 		box-sizing: border-box;
 		.wrapper{
 			.content{
-				width: 95%;
+				width: 100% !important;
 			}
 		}
 	}

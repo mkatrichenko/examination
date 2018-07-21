@@ -6,7 +6,7 @@
 			background-size: cover;
 		}
 		.page .search .wrapper .text-block {
-			<?php $searchImg = get_field('search_image');?>
+			<?php $searchImg = get_field('search_image', 'option');?>
   			background: url('<?php echo $searchImg['url']; ?>') no-repeat;
 		}
 	</style>
@@ -24,12 +24,12 @@
       <section class="search">
         <div class="wrapper container">
           <div class="text-block">
-            <h3 class="title"><?php the_field('search_title')?></h3>
-            <p class="description"><?php the_field('search_description')?></p>
+            <h3 class="title"><?php the_field('search_title', 'option')?></h3>
+            <p class="description"><?php the_field('search_description', 'option')?></p>
           </div>
           <form class="input-block">
-            <input placeholder="<?php the_field('search_input');?>"/>
-            <a class="search-btn"><?php the_field('search_button');?></a>
+            <input placeholder="<?php the_field('search_input', 'option');?>"/>
+            <a class="search-btn"><?php the_field('search_button', 'option');?></a>
           </form>
         </div>
       </section>
@@ -45,7 +45,7 @@
 				while ( $loop->have_posts() ) : $loop->the_post();?>
  				<div class="services__item grid">
 					<a class="avatar" href="<?php the_permalink(); ?>">
-           				<img src="<?php $service_img = get_field('image');echo $service_img['url'];?>"/>
+       					<?php the_post_thumbnail(); ?>
         			</a>
         			<div class="services__item-textblock">
 						<div class="title"><?php the_title();?></div>
@@ -57,9 +57,9 @@
 				
 				endwhile;
 				 wp_reset_postdata()
-			?>
+			?>  
           <div class="line container"></div>
-        </div><a class="btn" href='../services'><?php the_field('services_button');?></a>
+        </div><a class="btn" href="<?php the_field('services_link')?>"><?php the_field('services_button');?></a>
       </section>
       <section class="works">
         <div class="text-block">
@@ -120,7 +120,7 @@
               <p class="day"><?php echo $date->format('j'); ?></p>
             </div>
             <div class="avatar">
-            	<img src="<?php $news_img = get_field('news_image'); echo $news_img['url']; ?>" />
+            	<?php the_post_thumbnail(); ?>
             </div>
             <div class="news__item-text">
               <div class="title"><?php the_title(); ?></div>
@@ -129,11 +129,11 @@
                 <a class="link">Read More</a>
               </div>
             </div>
-            <div class="author"><?php the_field('author'); ?></div>
+            <div class="author"><?php  the_field('author') ?></div>
           </div>
 			<?php $post = $save;endwhile; ?>
         </div>
-        <a class="btn"><?php the_field('news_button')?></a>
+        <a class="btn" ><?php the_field('news_button')?></a>
       </section>
       <section class="contact-block">
         <div class="wrapper container">
@@ -161,7 +161,7 @@
               					</div>
 							</a>
 				<?php $post = $save;endwhile; ?>
-              <a class="footer-btn"><?php the_field('gallery_button')?></a>
+              <a class="footer-btn" href="<?php the_field('gallery_link')?>"><?php the_field('gallery_button')?></a>
             </div>
           </div>
         </div>

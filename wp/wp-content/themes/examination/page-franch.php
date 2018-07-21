@@ -23,10 +23,11 @@
         <div class="wrapper container franchisee">
           <div class="text-block">
             <h3 class="title">
+            	<?php the_field('article_title')?>
             	<div class="avatar right">
             		<img src="<?php $img = get_field('article_image'); echo $img['url']; ?>" />
             	</div>
-            		<?php the_field('article_title')?>
+            		
             </h3>
             <p class="description"><?php the_field('article_text')?></p>
             <?php
@@ -55,18 +56,18 @@
         <div class="wrapper container">
           <div class="contact">
             <div class="text">
-              <div class="title"><?php the_field('contact_title')?></div>
-              <div class="description"><?php the_field('contact_subtitle')?></div>
+              <div class="title"><?php the_field('contact_title', 'option')?></div>
+              <div class="description"><?php the_field('contact_subtitle', 'option')?></div>
             </div>
             <form>
-            	<a class="footer-btn"><?php the_field('contact_button_2')?></a>
-            	<a class="footer-btn"><?php the_field('contact_button_3')?></a>
+            	<a class="footer-btn"><?php the_field('contact_button_2', 'option')?></a>
+            	<a class="footer-btn"><?php the_field('contact_button_3', 'option')?></a>
             </form>
           </div>
           <div class="gallery">
             <div class="text">
-              <div class="title"><?php the_field('gallery_title')?></div>
-              <div class="description"><?php the_field('gallery_subtitle')?></div>
+              <div class="title"><?php the_field('gallery_title', 'option')?></div>
+              <div class="description"><?php the_field('gallery_subtitle', 'option')?></div>
             </div>
             <div class="box">
               <?php 	$args = array( 'post_type' => 'gallery', 'posts_per_page' => 10 );
@@ -83,5 +84,6 @@
           </div>
         </div>
       </section>
+	
     </div>
     <?php get_footer(); ?>

@@ -339,6 +339,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+			align-items: flex-start;
 			
 			.services__item{
 				width: 33.33%;
@@ -347,13 +348,13 @@
 				justify-content: center;
 				align-items: center;
 				padding: 10px;
-				margin-bottom: 30px;
+				margin-bottom: 10px;
 				box-sizing: border-box;
 				.avatar{
 					background-color: var(--second-color);
 					border-radius: 50%;
-					width: 87px;
-					height: 87px;
+					width: 84px;
+					height: 84px;
 					position: relative;
 					cursor: pointer;
 					transition: 0.4s all ease-out;
@@ -372,12 +373,12 @@
 					.title{
 						@include text-style(#000, 20px, 400, 1);
 						font-family: "Eurostile";
-						margin: 8px;
+						margin: 10px 0 13px 0;
 					}
 					.description{
 						@include text-style(#000, 16px, 400, 23px);
 						font-family: 'Helvetica';
-						margin: 8px;
+						margin: 0;
 					}
 				}
 			}
@@ -400,7 +401,7 @@
 		margin-top: 30px;
 		.text-block{
 				max-width: 450px;
-				
+				margin: 50px 0 24px 0;
 			}
 		.wrapper{
 			display: flex;
@@ -460,7 +461,7 @@
 		margin-top: 50px;
 		padding-bottom: 50px;
 		.text-block{
-				max-width: 424px;
+				max-width: 480px;
 			}
 		.wrapper{
 			
@@ -655,7 +656,7 @@
 			}
 			.contact{
 				width: 50%;
-				padding: 15px;
+				padding-right: 15px;
 				box-sizing: border-box;
 				form{
 					position: relative;
@@ -667,6 +668,9 @@
 					box-sizing: border-box;
 					span{
 						width: 47%;
+						.wpcf7-not-valid-tip{
+							color: var(--first-color);
+						}
 						input{
 							box-sizing: border-box;
 							padding: 16px 12px 10px 12px;
@@ -695,7 +699,7 @@
 								border: none;
 								margin-top: 20px;
 								width: 100%;
-								padding-bottom: 144px;
+								//padding-bottom: 144px;
 								box-sizing: border-box;
 								&::-webkit-input-placeholder{
 									@include text-style (#ababab, 	16px,400, 	24px);
@@ -820,13 +824,13 @@
 		
 		
 		.wrapper{
-			padding-bottom: 20px;
+			//padding-bottom: 20px;
 			border-bottom: 1px solid #d4d4d4;
 			display: flex;
 			justify-content: space-between;
 			.avatar{
 				width: 45%;
-				padding-right: 21px;
+				
 				img{
 					width: 100%;
 					height: auto;
@@ -836,12 +840,14 @@
 				padding-right: 0;
 				padding-left: 21px;
 				width: auto;
-				max-width: 593px;
 				float: right;
 			}
 			.text-block{
 				text-align: left;
-				margin-top: 0;
+				margin: 0;
+				width: auto;
+				max-width: 632px;
+				padding: 0 15px 34px 21px;
 				.title{
 					
 				}
@@ -854,9 +860,12 @@
 		.franchisee{
 			border: none;
 			padding-bottom: 0;
+			//max-width: inherit;
 			.text-block{
+				max-width: inherit;
 				width: 100%;
 				margin-bottom: 0;
+				padding-left: 0;
 			}
 		}
 	}
@@ -919,7 +928,19 @@
 	}
 }
 
-
+span.wpcf7-not-valid-tip{
+	color:var(--first-color);
+	width: 100% !important;
+	font-family: 'Helvetica';
+	margin-bottom: 20px;
+}
+div.wpcf7-response-output{
+	width: 100%;
+	border-color: var(--first-color);
+	color: #fff;
+	font-family: 'Helvetica';
+	margin: 25px 0;
+}
 .footer{
 		background-color: #000;
 		align-items: center;
