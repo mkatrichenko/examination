@@ -47,17 +47,23 @@
 				justify-content: center;
 				align-items: center;
 				.contact{
-					width: 90%;
+					width: 100% !important;
 					border: none;
+					padding: 0;
+					margin-bottom: 35px;
 					form{
 						margin-bottom: 70px;
-						input{
+						span{
 							width: 100%;
 						}
 					}
 				}
 				.gallery{
-					width: 90%;
+					width: 100% !important;
+					box-sizing: border-box;
+				}
+				.footer-btn{
+					width: 75% !important;
 				}
 			}
 		}
@@ -282,20 +288,19 @@
 	}
 	
 	form{
-		label.selectGeneral{
-			font-size: 12px;
+		span{
+			input{
+				&::-webkit-input-placeholder{
+					font-size: 16px;
+				}
+			}
 		}
-		label.selectGeneral:before{
-			font-size: 12px;
-			
+		.select-container{
+			.select-reason{
+			font-size: 12px !important;
 		}
-		label.selectGeneral:after{
-			background: url(../img/red-arrow.png) no-repeat;
-			width: 17px;
 		}
-		label.selectGeneral label{
-			font-size: 12px;
-		}
+		
 	}
 }
 
@@ -405,6 +410,21 @@
 }
 
 @media only screen and (max-width : 400px){
+	
+	.page{
+		
+		.contact-block{
+			
+			.gallery{
+				
+				.box{
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+		}
+	}
 
 }
 

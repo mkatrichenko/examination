@@ -22,7 +22,7 @@
   padding: 0 14px;
 }
 
-.breadcrumbs span{
+.breadcrumbs span[property="itemListItem"] {
   margin-top: 100px;
   color: red;
   display: none;
@@ -71,14 +71,14 @@
 }
 @font-face {
   font-family: 'Eurostile';
-  src: url("./fonts/EurostileLTDemi.ttf") format("truetype");
+  src: url("../fonts/EurostileLTStd-Demi.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Helvetica';
-  src: url("./fonts/HelveticaRegular.ttf") format("truetype");
+  src: url("fonts/HelveticaRegular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -194,7 +194,7 @@
   font-size: 32px;
   font-weight: 400;
   line-height: 1;
-  font-family: 'Eurostile';
+  font-family: "Eurostile";
   margin-bottom: 18px;
 }
 
@@ -257,21 +257,13 @@
   display: flex;
 }
 
-.header .header-top .wrapper menu__item {
+.header .header-top .wrapper .menu__item {
   margin-right: 23px;
   position: relative;
 }
 
-.header .header-top .wrapper menu-node--main_lvl_2 {
-  margin-right: 0;
-  position: relative;
-	padding: 15px 0;
-  border-bottom: 1px solid #dadada;
-}
-
 .header .header-top .wrapper .menu__item:last-child {
   margin-right: 0;
-	 
 }
 
 .header .header-top .wrapper .menu__item a {
@@ -317,16 +309,7 @@
   border-bottom: 1px solid #dadada;
 }
 
-.header .header-top .wrapper .menu__item:hover .dropdown .menu-node--main_lvl_2 {
-  padding: 15px 0;
-  border-bottom: 1px solid #dadada;
-}
-
 .header .header-top .wrapper .menu__item:hover .dropdown__item:last-child {
-  border: none;
-}
-
-.header .header-top .wrapper .menu__item:hover .dropdown .menu-node--main_lvl_2:last-child {
   border: none;
 }
 
@@ -374,7 +357,7 @@
   display: flex;
 }
 
-.header .header-bottom .wrapper .submenu__itemsubmenu__item {
+.header .header-bottom .wrapper .submenu__item {
   margin-right: 23px;
 }
 
@@ -403,7 +386,7 @@
 
 .banner {
   width: 100%;
-  background: url('<?php $img = get_field('banner_image'); echo $img['url']; ?>') center no-repeat;
+  background: url("../img/house.png") no-repeat;
   min-height: 590px;
   background-size: cover;
   position: relative;
@@ -1063,17 +1046,21 @@
   box-sizing: border-box;
 }
 
-.page .contact-block .wrapper .contact form input {
+.page .contact-block .wrapper .contact form span {
+  width: 47%;
+}
+
+.page .contact-block .wrapper .contact form span input {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 16px 12px 10px 12px;
   border: none;
   outline: none;
   margin-bottom: 20px;
-  width: 47%;
+  width: 100%;
 }
 
-.page .contact-block .wrapper .contact form input::-webkit-input-placeholder {
+.page .contact-block .wrapper .contact form span input::-webkit-input-placeholder {
   color: #ababab;
   font-size: 16px;
   font-weight: 400;
@@ -1082,21 +1069,75 @@
   font-style: oblique;
 }
 
-.page .contact-block .wrapper .contact form .comments {
+.page .contact-block .wrapper .contact form .textarea-container {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  position: relative;
+}
+
+.page .contact-block .wrapper .contact form .textarea-container span {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.page .contact-block .wrapper .contact form .textarea-container span .comments {
   padding: 16px 12px 10px 12px;
   border: none;
   margin-top: 20px;
   width: 100%;
   padding-bottom: 144px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.page .contact-block .wrapper .contact form .comments::-webkit-input-placeholder {
+.page .contact-block .wrapper .contact form .textarea-container span .comments::-webkit-input-placeholder {
   color: #ababab;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   font-family: 'Helvetica';
   font-style: oblique;
+}
+
+.page .contact-block .wrapper .contact form .select-container {
+  position: relative;
+  background: url("../img/red-arrow.png") no-repeat right #fff;
+  overflow: hidden;
+  width: 100%;
+  background-position-x: 98%;
+}
+
+.page .contact-block .wrapper .contact form .select-container .select-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.page .contact-block .wrapper .contact form .select-container .select-reason {
+  padding: 13px 12px 9px 10px;
+  background: transparent;
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  -moz-appearance: none;
+  appearance: none;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  font-family: 'Helvetica';
+}
+
+.page .contact-block .wrapper .contact form .select-container .select-button {
+  width: 80px;
+  height: 100%;
 }
 
 .page .contact-block .wrapper .gallery {
@@ -1665,7 +1706,6 @@ form label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="r
     padding: 14px 0;
   }
 
-
   .header .header-bottom .wrapper .menu_state_open .menu__container .menu__item a:hover {
     color: #ffdd00;
   }
@@ -1925,20 +1965,28 @@ form label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="r
   }
 
   .page .contact-block .wrapper .contact {
-    width: 90%;
+    width: 100% !important;
     border: none;
+    padding: 0;
+    margin-bottom: 35px;
   }
 
   .page .contact-block .wrapper .contact form {
     margin-bottom: 70px;
   }
 
-  .page .contact-block .wrapper .contact form input {
+  .page .contact-block .wrapper .contact form span {
     width: 100%;
   }
 
   .page .contact-block .wrapper .gallery {
-    width: 90%;
+    width: 100% !important;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .page .contact-block .wrapper .footer-btn {
+    width: 75% !important;
   }
 
   .page .advertisement .wrapper {
@@ -2187,21 +2235,12 @@ form label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="r
     padding: 40px;
   }
 
-  form label.selectGeneral {
-    font-size: 12px;
+  form span input::-webkit-input-placeholder {
+    font-size: 16px;
   }
 
-  form label.selectGeneral:before {
-    font-size: 12px;
-  }
-
-  form label.selectGeneral:after {
-    background: url("../img/red-arrow.png") no-repeat;
-    width: 17px;
-  }
-
-  form label.selectGeneral label {
-    font-size: 12px;
+  form .select-container .select-reason {
+    font-size: 12px !important;
   }
 }
 
@@ -2298,6 +2337,21 @@ form label.selectGeneral input[type="radio"]:not(:checked) ~ div > input[type="r
 
   .page .news .wrapper .news__item {
     width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .page .contact-block .gallery .box {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 
