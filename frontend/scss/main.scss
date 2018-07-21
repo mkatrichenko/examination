@@ -21,7 +21,7 @@
 	cursor: pointer;
 	transition: 0.4s all ease-out;
 	background-color: var(--first-color);
-	padding: 21px 26px;
+	padding: 23px 54px;
 	&:hover{
 		background-color: var(--second-color);
 		color: #fff;
@@ -29,9 +29,11 @@
 }
 
 .text-block{
-	margin: 46px 0;
-	width: 45%;
+	margin: 24px 0;
+	//width: 45%;
 	text-align: center;
+	max-width: 450px;
+	width: 37.33%;
 	.title{
 		@include text-style(var(--second-color), 32px, 400, 1);
 		font-family: "Eurostile";
@@ -43,6 +45,15 @@
 	}
 }
 
+
+.grid{
+	max-width: 384px;
+	margin-right: 20px;
+	
+	&:nth-child(3n){
+		margin-right: 0;
+	}
+}
 
 .header{
 	padding: 0;
@@ -149,7 +160,8 @@
 		.submenu{
 			display: flex;
 			&__item{
-				margin-right: 23px;
+				padding-left: 10px;
+				margin-left: 40px;
 				&:last-child{
 						margin-right: 0;
 				}
@@ -175,7 +187,7 @@
 
 .banner{
 	width: 100%;
-	background: url(../img/house.png) no-repeat;
+	background: url(../img/house.png) center no-repeat;
 	min-height: 590px;
 	background-size:  cover;
 	position: relative;
@@ -183,23 +195,27 @@
 	display: flex;
 	align-items: center;
 	width: 100%;
-	box-sizing: border-box;
+	//box-sizing: border-box;
 	.wrapper{
 		
 		.content{
 			background: rgba(0, 0, 0, 0.6);
-			width: 61%;
+			width: 49%;
 			box-sizing: border-box;
-			padding: 65px;
+			padding: 57px 65px 36px 29px;
+			
 			.text{
 				margin-bottom: 35px;
 				p{
 					margin: 0;
-					@include text-style(#fff, 34px, 400, 1.43);
+					padding: 0;
+					@include text-style(#fff, 34px, 400, 40.8px);
 					font-family: "Eurostile";
 				}
 				span{
-					@include text-style(#fff, 34px, 400, 1.43);
+					padding: 0;
+					margin: 0;
+					@include text-style(#fff, 34px, 400, 40.8px);
 					font-family: "Eurostile";
 				}
 				.yellow{
@@ -207,6 +223,7 @@
 				}
 			}
 			.btn{	
+				box-sizing: border-box;
 				&:after{
 					content: "";
 					background-image: url(../img/banner-arrow.png);
@@ -232,28 +249,48 @@
 		background-color: var(--first-color);
 		position: relative;
 		height: inherit;
-		padding: 36px 0;
+		padding: 27px 0 32px;
 		display: flex;
 		align-items: center;
 		.wrapper{
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			box-sizing: border-box;
+			padding: 0 40px;;
+			position: relative;
+			
 			.text-block{
+				height: 80px;
 				background: url(../img/marker.png) no-repeat;
-				//background-size: contain;
 				display: flex;
-				padding-left: 60px;
+				padding-left: 63px;
 				margin: 0;
-				flex-direction: column;
-				justify-content: center;
+				flex-wrap: wrap;
+				align-items: center;
+				//align-content: space-between;
+				justify-content: flex-start;
+				width: 60%;
+				text-align: left;
+				box-sizing: border-box;
+				-webkit-font-smoothing: antialiased;
+				
 				.title{
-					@include text-style (#000, 38px,400, 1);
+					//width: 100%;
+					@include text-style (#000, 38px,400, 24px);
 					font-family: "Eurostile";
+					margin: 0;
+					padding: 0;
+					white-space: nowrap;
 				}
 				.description{
-					@include text-style (#000, 16px ,700,1);
+					width: 100%;
+					@include text-style (#000, 16px ,700,24px);
 					font-family: 'Helvetica';
+					margin: 0;
+					padding: 0;
+					white-space: nowrap;
+					
 				}
 			}
 			.input-block{
@@ -295,10 +332,14 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		.text-block{
+				max-width: 450px;
+			}
 		.wrapper{
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: flex-start;
+			justify-content: space-between;
+			
 			.services__item{
 				width: 33.33%;
 				display: flex;
@@ -306,7 +347,7 @@
 				justify-content: center;
 				align-items: center;
 				padding: 10px;
-				margin-bottom: 39px;
+				margin-bottom: 30px;
 				box-sizing: border-box;
 				.avatar{
 					background-color: var(--second-color);
@@ -357,15 +398,19 @@
 		align-items: center;
 		flex-direction: column;
 		margin-top: 30px;
+		.text-block{
+				max-width: 450px;
+				
+			}
 		.wrapper{
 			display: flex;
 			.works__item{
-				width: 33.33%;
-				padding: 10px;
+				//width: 33.33%;
+				//padding: 10px;
 				box-sizing: border-box;
-				max-width: 388px;
+				//max-width: 388px;
 				&-avatar{
-//					width: 100%;
+					width: 100%;
 //					height: 202px;
 					img{
 						max-width: 100%
@@ -375,7 +420,7 @@
 					@include text-style(#000, 20px, 400, 1);
 					font-family: "Eurostile";
 					background-color: var(--first-color);
-					width: 100%;
+					//width: 100%;
 					cursor: pointer;
 					transition: 0.4s all ease-out;
 					position: relative;
@@ -414,6 +459,9 @@
 		padding: 35px 0;
 		margin-top: 50px;
 		padding-bottom: 50px;
+		.text-block{
+				max-width: 424px;
+			}
 		.wrapper{
 			
 			.feedback-slider{
@@ -480,6 +528,12 @@
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
+		.text-block{
+				max-width: 424px;
+			}
+		.btn{
+			padding: 23px 56px 27px 57px;
+		}
 		.wrapper{
 			display: flex;
 			margin-bottom: 48px;
@@ -487,8 +541,9 @@
 				display: flex;
 				flex-direction: column;
 				position: relative;
-				width: 33%;
-				padding: 0 10px;
+				//width: 33%;
+				//padding: 0 10px;
+				
 				.date{
 					position: absolute;
 					top: 0;

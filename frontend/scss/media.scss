@@ -4,11 +4,70 @@
 		.container{
 			max-width: 960px;
 		}
+	
+	.grid{
+		margin-right: 0px;
+	}
+	.wrapper{
+		justify-content: space-between;
+	}
+	
+	.text-block{
+		width: 45%;
+	}
+	
+	.header{
+		.header-bottom{
+			.wrapper{
+				.submenu{
+					&__item{
+						margin-left: 8px;
+					}
+				}
+			}
+		}
+	}
+	
+	.page{
+		
+		.works{
+			
+			.wrapper{
+				
+				.works__item{
+					
+					width: 33.33%;
+					padding: 0 10px;
+					box-sizing: border-box;
+				}
+			}
+		}
+		.news{
+			.wrapper{
+				.news__item{
+					width: 33.33%;
+					padding: 0 10px;
+					box-sizing: border-box;
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (max-width : 968px){
 	.container{
 		max-width: 738px;
+	}
+	
+	.grid{
+		width: 350px !important;
+		margin-right: 25px;
+		&:nth-child(3n){
+			margin-right: auto;
+		}
+		&:nth-child(2n){
+			margin-right: 0;
+		}
 	}
 	
 	.header{
@@ -88,6 +147,23 @@
 				}
 			}
 		}
+		
+		.works{
+			
+			.wrapper{
+				justify-content: space-between;
+				.works__item{
+					max-width: 32%;
+					margin: 0;
+					
+					&-link{
+						p{
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
 	}
 		
 }
@@ -96,6 +172,11 @@
 	.container{
 		box-sizing: border-box;
 		padding: 0 5%;
+	}
+	
+	.grid{
+		width: 100%;
+		margin-right: 0 !important;
 	}
 	
 	.header{
@@ -215,6 +296,7 @@
 				justify-content: center;
 				.works__item{
 					width: 100%;
+					max-width: 100%;
 				}
 			}
 		}
@@ -279,10 +361,33 @@
 
 @media only screen and (max-width : 600px){
 	
+	
+	.text-block{
+		width: 100%;
+	}
 	.banner{
 		.wrapper{
 			.content{
 				padding: 40px;
+			}
+		}
+	}
+	
+	.page{
+		.search{
+			
+			.wrapper{
+				height: inherit;
+				.text-block{
+					margin-bottom: 85px;
+					.title{
+						white-space: normal;
+						line-height: 40.8px;
+					}
+					.description{
+						white-space: normal;
+					}
+				}
 			}
 		}
 	}
@@ -353,13 +458,12 @@
 			.wrapper{
 				padding: 0 15px;
 				.text-block{
-					padding-top: 80px;
-					padding-left: 0;
-					width: 100%;
-					margin-bottom: 12px;
-					background: url(../img/marker.png) top-center no-repeat;
-					background-position-x: center;
-					//box-sizing: border-box;
+					//padding-top: 80px;
+					//padding-left: 0;
+					//width: 100%;
+					//margin-bottom: 12px;
+					height: inherit;
+					margin-bottom: 0;
 					.title{
 						font-size: 30px;
 						line-height: 1;
@@ -370,7 +474,7 @@
 					}
 				}
 				.input-block{
-					margin-left: 0;
+					margin-left: 63px;
 					flex-wrap: wrap;
 					input{
 						width: 100%;

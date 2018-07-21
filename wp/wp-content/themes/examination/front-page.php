@@ -1,23 +1,8 @@
-<?php
-/**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package examination
- */
-
-get_header();
-?>
+<?php get_header(); ?>
 	<style type="text/css">
 		<?php $img = get_field('banner_image');?>
 		.banner {
-    		background: url('<?php echo $img['url']; ?>') no-repeat;
+    		background: url('<?php echo $img['url']; ?>') center no-repeat;
 			background-size: cover;
 		}
 		.page .search .wrapper .text-block {
@@ -58,7 +43,7 @@ get_header();
 				$loop = new WP_Query( $args );
 				$save = $post;
 				while ( $loop->have_posts() ) : $loop->the_post();?>
- 				<div class="services__item">
+ 				<div class="services__item grid">
 					<a class="avatar" href="<?php the_permalink(); ?>">
            				<img src="<?php $service_img = get_field('image');echo $service_img['url'];?>"/>
         			</a>
@@ -86,7 +71,7 @@ get_header();
 				$works_loop = new WP_Query( $works_args );
 			  	$save = $post;
 				while ( $works_loop->have_posts() ) : $works_loop->the_post();?>
-				<div class="works__item">
+				<div class="works__item grid">
             		<div class="works__item-avatar">
             			<img src="<?php $works_img = get_field('works_image');echo $works_img['url'];?>"/>
             		</div>
@@ -129,7 +114,7 @@ get_header();
 				$date = get_field('date', false, false);
 				$date = new DateTime($date);
 			?>
-            <div class="news__item">
+            <div class="news__item grid">
             <div class="date">
               <p class="month"><?php echo $date->format('M'); ?></p>
               <p class="day"><?php echo $date->format('j'); ?></p>
@@ -157,25 +142,7 @@ get_header();
               <div class="title"><?php the_field('contact_title')?></div>
               <div class="description"><?php the_field('contact_subtitle')?></div>
             </div>
-            <form>
-              <input placeholder="<?php the_field('1_input')?>"/>
-              <input placeholder="<?php the_field('2_input')?>"/>
-              <input placeholder="<?php the_field('3_input')?>"/>
-              <input placeholder="<?php the_field('4_input')?>"/>
-              <label class="selectGeneral" placeholder="<?php the_field('select_placeholder')?>">
-                <input type="radio" name="OS"/>
-                <div>
-                  <input type="radio" name="OS" value="Linux" id="list[0]"/>
-                  <label for="list[0]"><?php the_field('select_option_1')?></label>
-                  <input type="radio" name="OS" value="Windows" id="list[1]"/>
-                  <label for="list[1]"><?php the_field('select_option_1')?></label>
-                  <input type="radio" name="OS" value="Other" id="list[2]"/>
-                  <label for="list[2]"><?php the_field('select_option_1')?></label>
-                </div>
-              </label>
-              <textarea class="comments" placeholder="<?php the_field('coment')?>"></textarea>
-              <a class="footer-btn"><?php the_field('contact_button')?></a>
-            </form>
+            <?php echo do_shortcode('[contact-form-7 id="315" title="Contact form 1"]') ?>
           </div>
           <div class="gallery">
             <div class="text">
