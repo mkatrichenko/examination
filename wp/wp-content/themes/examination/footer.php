@@ -23,9 +23,6 @@
 			?>
       </div>
     </div>
-    <script src="./js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="./slick/slick.min.js"></script>
-    <script src="./js/index.js"></script>
     
     <?php wp_footer(); ?>
   </body>

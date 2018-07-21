@@ -259,7 +259,7 @@
 			box-sizing: border-box;
 			padding: 0 40px;;
 			position: relative;
-			
+			flex-wrap: wrap;
 			.text-block{
 				height: 80px;
 				background: url(../img/marker.png) no-repeat;
@@ -926,6 +926,20 @@
 			
 		}
 	}
+	
+	.post-list{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+		
+		.wrapper{
+			
+			.text-block{
+				text-align: center;
+			}
+		}
+	}
 }
 
 span.wpcf7-not-valid-tip{
@@ -998,7 +1012,76 @@ div.wpcf7-response-output{
 		}
 	}
 	
+article{
+	background-color: #dadada;
+	padding: 15px 5%;
+	margin: 0 !important;
+	.entry-header{
+		margin-bottom: 10px;
+		.entry-title{
+			a{
+				@include text-style(var(--second-color), 24px, 700, 24px);
+			}
+			
+		}
+		
+	}
+	.entry-content{
+		p{
+			color: #000;
+		}
+	}
+	.entry-footer{
+		margin-top: 10px;
+		.edit-link{
+			
+			a{
+				color: #000;
+				font-size: 20px;
+				span{
+					font-size: 20px;
+					color: var(--second-color);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.wrapper{
+	form{
+		
+		.search-submit{
+			padding: 3px 15px;
+			background-color: #fff;
+			border: 1px solid var(--second-color);
+			box-shadow: none;
+			@include text-style(var(--second-color), 16px, 400, 1.43);
+			cursor: pointer;
+			transition: 0.4s all ease-out;
+			margin-left: 15px;
+			&:hover{
+				
+				color: #fff;
+				background-color: var(--second-color);
+			}
+		}
+		label{
+			.search-field{
+				padding: 3px;
+				border: 1px solid var(--second-color);
+				margin-bottom: 7.5px;
+			}
+		}
+	}
+}
 
+
+
+.no-results{
+	padding: 15px 5%;
+	background-color: #dadada;
+	margin-top: 35px;
+}
 
 form{
 	//z-index: ;
