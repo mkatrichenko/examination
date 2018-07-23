@@ -8,17 +8,7 @@
 	</style>
      <div class="page">
       <section class="banner-short franch"></section>
-      <section class="nav">
-        <div class="wrapper container">
-          <div class="breadcrumbs">
-          	 <?php
-    if(function_exists('bcn_display'))
-    {
-            bcn_display();
-    }?>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part( 'template-parts/navigation');?>
       <section class="article">
         <div class="wrapper container franchisee">
           <div class="text-block">
@@ -52,38 +42,7 @@
           <div class="left"><a class="btn"><?php the_field('adv_button')?></a></div>
         </div>
       </section>
-      <section class="contact-block new">
-        <div class="wrapper container">
-          <div class="contact">
-            <div class="text">
-              <div class="title"><?php the_field('contact_title', 'option')?></div>
-              <div class="description"><?php the_field('contact_subtitle', 'option')?></div>
-            </div>
-            <form>
-            	<a class="footer-btn"><?php the_field('contact_button_2', 'option')?></a>
-            	<a class="footer-btn"><?php the_field('contact_button_3', 'option')?></a>
-            </form>
-          </div>
-          <div class="gallery">
-            <div class="text">
-              <div class="title"><?php the_field('gallery_title', 'option')?></div>
-              <div class="description"><?php the_field('gallery_subtitle', 'option')?></div>
-            </div>
-            <div class="box">
-              <?php 	$args = array( 'post_type' => 'gallery', 'posts_per_page' => 10 );
-						$loop = new WP_Query( $args );
-			  			$save = $post;
-						while ( $loop->have_posts() ) : $loop->the_post();?>
-          					<a href="<?php the_permalink(); ?>">
-           					<div class="gallery__item">
-              					<img src="<?php $gallery_img = get_field('gallery_image'); echo $gallery_img['url']; ?>" />
-              				</div>
-              				</a>
-				<?php $post = $save;endwhile; ?>
-            </div>
-          </div>
-        </div>
-      </section>
+      <?php get_template_part( 'template-parts/contact-gallery');?>
 	
     </div>
     <?php get_footer(); ?>

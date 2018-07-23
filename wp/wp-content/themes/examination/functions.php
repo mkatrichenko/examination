@@ -154,7 +154,7 @@ function examination_scripts() {
 	
 	wp_enqueue_script( 'jquerry', get_template_directory_uri() . '/js/jquery-3.2.1.min.js', array(), 'null', true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/slick/slick.min.js', array(), 'null', true );
-	wp_enqueue_script( 'index-js', get_template_directory_uri() . '/js/index-min.js', array(), 'null', true );
+	wp_enqueue_script( 'index-js', get_template_directory_uri() . '/js/index.js', array(), 'null', true );
 
 	wp_enqueue_script( 'examination-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -193,8 +193,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-//update_option('siteurl', 'http://dyplom');
-//update_option('home', 'http://dyplom');
+update_option('siteurl', 'http://dyplom');
+update_option('home', 'http://dyplom');
 
 
 
@@ -319,3 +319,13 @@ function filter_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
 	}
 	return $atts;
 }
+
+
+
+//contact form bugfix
+add_filter('wpcf7_autop_or_not', '__return_false');
+
+
+
+//new icon type
+add_image_size( 'small', 130, 130, true );

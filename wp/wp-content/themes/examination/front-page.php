@@ -33,108 +33,32 @@
           </form>
         </div>
       </section>
-      <section class="services">
-        <div class="text-block">
-          <h3 class="title"><?php the_field('services_title');?></h3>
-          <h4 class="description"><?php the_field('services_subtitle');?></h4>
-        </div>
-        <div class="wrapper container">
-          <?php $args = array( 'post_type' => 'services', 'posts_per_page' => 10 );
-				$loop = new WP_Query( $args );
-				$save = $post;
-				while ( $loop->have_posts() ) : $loop->the_post();?>
- 				<div class="services__item grid">
-					<a class="avatar" href="<?php the_permalink(); ?>">
-       					<?php the_post_thumbnail(); ?>
-        			</a>
-        			<div class="services__item-textblock">
-						<div class="title"><?php the_title();?></div>
-						<div class="description"><?php the_field('description');?></div>
-					</div>
-				</div>
-				
-			<?php	
-				
-				endwhile;
-				 wp_reset_postdata()
-			?>  
-          <div class="line container"></div>
-        </div><a class="btn" href="<?php the_field('services_link')?>"><?php the_field('services_button');?></a>
-      </section>
-      <section class="works">
-        <div class="text-block">
-          <h3 class="title"><?php the_field('works_title')?></h3>
-          <h4 class="description"><?php the_field('works_subtitle')?></h4>
-        </div>
-        <div class="wrapper container">
-         	<?php $works_args = array( 'post_type' => 'works', 'posts_per_page' => 10 );
-				$works_loop = new WP_Query( $works_args );
-			  	$save = $post;
-				while ( $works_loop->have_posts() ) : $works_loop->the_post();?>
-				<div class="works__item grid">
-            		<div class="works__item-avatar">
-            			<img src="<?php $works_img = get_field('works_image');echo $works_img['url'];?>"/>
-            		</div>
-            		<div class="works__item-link">
-              			<p href="<?php the_permalink(); ?>"><?php the_title();?></p>
-            		</div>
-          		</div>
-			<?php $post = $save; endwhile; ?>
-        </div>
-      </section>
+      <?php get_template_part( 'template-parts/services');?>
+      <?php get_template_part( 'template-parts/works');?>
       <section class="feedback">
         <div class="text-block">
           <h3 class="title"><?php the_field('feedback_title'); ?></h3>
         </div>
         <div class="wrapper container">
           <div class="feedback-slider">
-           <?php $args = array( 'post_type' => 'feedback', 'posts_per_page' => 10 );
-				$loop = new WP_Query( $args );
-			  	$save = $post;
-				while ( $loop->have_posts() ) : $loop->the_post();?>
- 				<div class="slide">
-              <div class="description"><?php the_field('text'); ?></div>
-              <p class="author"><?php the_field('author'); ?></p>
-              <p class="place"><?php the_field('place'); ?></p>
-            </div>
-			<?php $post = $save;endwhile; ?>
+          <?php
+				if( have_rows('feedback') ):
+					while ( have_rows('feedback') ) : the_row();?>
+						<div class="slide">
+              				<div class="content"><?php the_sub_field('feedback_text'); ?></div>
+              					<div class="description">
+              						<p class="author"><?php the_sub_field('feedback_author'); ?></p>
+              						<p class="place"><?php the_sub_field('feedback_place'); ?></p>
+              					</div>
+            			</div>
+			<?php	endwhile;
+		 		else :
+				endif;
+			  ?>
           </div>
         </div>
       </section>
-      <section class="news">
-        <div class="text-block">
-          <h3 class="title"><?php the_field('news_title')?></h3>
-        </div>
-        <div class="wrapper container">
-         	<?php $args = array( 'post_type' => 'news', 'posts_per_page' => 10 );
-				$loop = new WP_Query( $args );
-			  	$save = $post;
-				while ( $loop->have_posts() ) : $loop->the_post();?>
-            <?php 
-				$date = get_field('date', false, false);
-				$date = new DateTime($date);
-			?>
-            <div class="news__item grid">
-            <div class="date">
-              <p class="month"><?php echo $date->format('M'); ?></p>
-              <p class="day"><?php echo $date->format('j'); ?></p>
-            </div>
-            <div class="avatar">
-            	<?php the_post_thumbnail(); ?>
-            </div>
-            <div class="news__item-text">
-              <div class="title"><?php the_title(); ?></div>
-              <div class="description">
-                <p><?php the_field('text'); ?></p>
-                <a class="link">Read More</a>
-              </div>
-            </div>
-            <div class="author"><?php  the_field('author') ?></div>
-          </div>
-			<?php $post = $save;endwhile; ?>
-        </div>
-        <a class="btn" ><?php the_field('news_button')?></a>
-      </section>
+      <?php get_template_part( 'template-parts/news');?>
       <section class="contact-block">
         <div class="wrapper container">
           <div class="contact">
@@ -157,7 +81,8 @@
 						while ( $loop->have_posts() ) : $loop->the_post();?>
            					<a href="<?php the_permalink();?>">
            						<div class="gallery__item">
-              						<img src="<?php $gallery_img = get_field('gallery_image'); echo $gallery_img['url']; ?>" />
+              						<?php $img = get_the_post_thumbnail_url(); ?>
+            			<img src="<?php echo $img; ?>" alt="gallery image">
               					</div>
 							</a>
 				<?php $post = $save;endwhile; ?>

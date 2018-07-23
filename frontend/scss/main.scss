@@ -8,6 +8,9 @@
   --second-color: #db302c;
 }
 
+$first : #ffdd00;
+$second: #db302c;
+
 .container{
 	width: 100%;
 	max-width: 1200px;
@@ -20,10 +23,10 @@
 	font-family: 'Helvetica';
 	cursor: pointer;
 	transition: 0.4s all ease-out;
-	background-color: var(--first-color);
+	background-color: $first;
 	padding: 23px 54px;
 	&:hover{
-		background-color: var(--second-color);
+		background-color: $second;
 		color: #fff;
 	}
 }
@@ -35,7 +38,7 @@
 	max-width: 450px;
 	width: 37.33%;
 	.title{
-		@include text-style(var(--second-color), 32px, 400, 1);
+		@include text-style($second, 32px, 400, 1);
 		font-family: "Eurostile";
 		margin-bottom: 18px;
 	}
@@ -69,7 +72,7 @@
 		justify-content: space-between;
 		//align-items: center;
 		.find{
-			@include text-style (var(--first-color), 14px, 700, 1.43);
+			@include text-style ($first, 14px, 700, 1.43);
 			font-family: 'Helvetica';
 			cursor: pointer;
 			&:after{
@@ -97,10 +100,10 @@
 					transition: 0.4s all ease-out;
 				}
 				a:hover{
-					color: var(--first-color);
+					color: $first;
 				}
 				.active{
-					color: var(--second-color);
+					color: $second;
 				}
 				.dropdown{
 					display: none;
@@ -173,10 +176,10 @@
 				
 				}
 				a:hover{
-					color: var(--first-color);
+					color: $first;
 				}
 				.active{
-					color: var(--second-color);
+					color: $second;
 				}
 			}
 		}
@@ -219,7 +222,7 @@
 					font-family: "Eurostile";
 				}
 				.yellow{
-					color: var(--first-color);
+					color: $first;
 				}
 			}
 			.btn{	
@@ -246,7 +249,7 @@
 	}
 	
 	.search{
-		background-color: var(--first-color);
+		background-color: $first;
 		position: relative;
 		height: inherit;
 		padding: 27px 0 32px;
@@ -310,15 +313,15 @@
 				}
 				.search-btn{
 					padding: 21px 38px;
-					background-color: var(--second-color);
-					border: 1px solid var(--second-color);
+					background-color: $second;
+					border: 1px solid $second;
 					@include text-style (#fff,18px,700,1);
 					font-family: 'Helvetica';
 					cursor: pointer;
 					transition: 0.4s all ease-out;
 					
 					&:hover{
-						color: var(--second-color);
+						color: $second;
 						background-color: #fff;
 					}
 				}
@@ -351,13 +354,14 @@
 				margin-bottom: 10px;
 				box-sizing: border-box;
 				.avatar{
-					background-color: var(--second-color);
+					background-color: $second;
 					border-radius: 50%;
 					width: 84px;
 					height: 84px;
 					position: relative;
 					cursor: pointer;
 					transition: 0.4s all ease-out;
+					overflow: hidden;
 					&:hover{
 						opacity: 0.8;
 					}
@@ -366,6 +370,11 @@
 						top: 50%;
 						left:50%;
 						transform:  translateX(-50%) translateY(-50%);
+						text-align: right;
+						@include text-style(#fff, 12px, 400, 1.43);
+						font-style: italic;
+						border: none;
+						
 					}
 				}
 				&-textblock{
@@ -406,28 +415,34 @@
 		.wrapper{
 			display: flex;
 			.works__item{
-				//width: 33.33%;
-				//padding: 10px;
+				width: 100%;
+				max-width: 384px;
 				box-sizing: border-box;
 				//max-width: 388px;
 				&-avatar{
 					width: 100%;
 //					height: 202px;
+					background-color: #dadada;
 					img{
-						max-width: 100%
+						max-width: 100%;
+						width: 100%;
+						text-align: right;
+						
+						@include text-style(#000, 16px, 400, 1.43);
+						font-style: italic;
 					}
 				}
 				&-link{
 					@include text-style(#000, 20px, 400, 1);
 					font-family: "Eurostile";
-					background-color: var(--first-color);
+					background-color: $first;
 					//width: 100%;
 					cursor: pointer;
 					transition: 0.4s all ease-out;
 					position: relative;
-					top: -5px;
+					top: -6px;
 					&:hover{
-						background-color: var(--second-color);
+						background-color: $second;
 						p{
 							color: white;
 						}
@@ -470,21 +485,31 @@
 				.slide{
 					height: inherit;
 					text-align: right;
-					.description{
+					margin: 0 3px;
+					.content{
 						text-align: left;
 						background-color: #fff;
 						@include text-style(#000, 20px, 400, 26px);
-						font-family: "Helvetica";
+						font-family: 'Helvetica - Oblique';
 						font-style: oblique;
 						box-sizing: border-box;
 						padding: 30px 40px 30px 20px;
 						margin-bottom: 10px;
 					}
-					p{
-						@include text-style(#000, 14px, 400, 19px);
-						font-family: "Helvetica";
-						font-style: oblique;
-						margin: 0;
+					.description{
+						display: inline-block;
+						float: right;
+						box-sizing: border-box;
+						text-align: right;
+						//width: 150px;
+						padding-right: 3px;
+						p{
+							@include text-style(#000, 14px, 400, 19px);
+							font-family: 'Helvetica - Oblique';
+							font-style: oblique;
+							margin: 0;
+							
+						}
 					}
 				}
 				.slick-dots{
@@ -537,19 +562,25 @@
 		}
 		.wrapper{
 			display: flex;
+			flex-wrap: wrap;
 			margin-bottom: 48px;
 			.news__item{
+				width: 100%;
+				max-width: 384px;
 				display: flex;
 				flex-direction: column;
 				position: relative;
 				//width: 33%;
 				//padding: 0 10px;
-				
+				border: 1px solid #e1e1e1;
+				box-sizing: content-box;
+				margin-bottom: 15px;
 				.date{
 					position: absolute;
+					z-index: 3;
 					top: 0;
 					left: 10;
-					background-color: var(--first-color);
+					background-color: $first;
 					width: 64px;
 					height: 64px;
 					display: flex;
@@ -572,15 +603,32 @@
 				}
 				.avatar{
 					width: 100%;
+					border: none;
+					background-color: #dadada;
+					min-height: 100px;
 					img{
+						min-width: 100%;
 						width: 100%;
+						text-align: center;
+						@include text-style(red, 32px, 700, 1.43);
+						border: none;
+					}
+					img[alt*="News image"]{
+						
+						width: 100%;
+						text-align: right;
+						@include text-style(#000, 16px, 400, 1.43);
+						font-style: italic;
+						border: none;
 					}
 				}
 				&-text{
+					border-bottom: 1px solid #e1e1e1;
 					padding: 17px;
-					border: 1px solid #e1e1e1;
+					background-color: #fff;
 					position: relative;
 					top: -5px;
+					z-index: 2;
 					.title{
 						@include text-style(#000, 28px, 400, 1);
 						font-family: "Eurostile";
@@ -597,13 +645,13 @@
 						display: inline;
 						text-decoration: underline;
 						cursor: pointer;
-						@include text-style(var(--second-color), 16px, 400, 24px);
+						@include text-style($second, 16px, 400, 24px);
 						font-family: 'Helvetica';
 					}
 				}
 				.author{
 					@include text-style(#000, 14px, 700, 1);
-					border: 1px solid #e1e1e1;
+					
 					font-family: 'Helvetica';
 					text-transform: uppercase;
 					border-top: none;
@@ -614,7 +662,7 @@
 	}
 	
 	.contact-block{
-		background-color: var(--second-color);
+		background-color: $second;
 		position: relative;
 		z-index: 2;
 		padding-top: 42px;
@@ -639,8 +687,8 @@
 			.footer-btn{
 				padding: 27px 36px;
 				background: #fff;
-				border: 1px solid var(--second-color);
-				@include text-style(var(--second-color), 16px, 700,1);
+				border: 1px solid $second;
+				@include text-style($second, 16px, 700,1);
 				font-family: 'Helvetica';
 				cursor: pointer;
 				transition: 0.4s all ease-out;
@@ -649,7 +697,7 @@
 				right: 0;
 				transform: translateY(100%);
 				&:hover{
-					background-color: var(--second-color);
+					background-color: $second;
 					color: white;
 					border: 1px solid white;
 				}
@@ -669,7 +717,7 @@
 					span{
 						width: 47%;
 						.wpcf7-not-valid-tip{
-							color: var(--first-color);
+							color: $first;
 						}
 						input{
 							box-sizing: border-box;
@@ -763,10 +811,14 @@
 						width: 131px;
 						height: 132px;
 						border: 1px solid #fff;
-						margin-top: 22px;
+						margin-bottom: 22px;
 						img{
 							width: 100%;
 							height: 100%;
+							text-align: right;
+							@include text-style(#fff, 12px, 400, 1.43);
+							font-style: italic;
+							border: none;
 						}
 					}
 					.footer-btn{
@@ -810,6 +862,7 @@
 		background: url(../img/windows-banner.png) center no-repeat;
 		background-size: cover;
 		min-height: 266px;
+		background-color: #dadada;
 	}
 	
 	.we{
@@ -880,7 +933,7 @@
 					display: inline;
 				}
 				.underscore{
-					color: var(--second-color);
+					color: $second;
 					text-decoration: underline;
 					cursor: pointer;
 				}
@@ -889,7 +942,7 @@
 	}
 	
 	.advertisement{
-		background-color: var(--first-color);
+		background-color: $first;
 		position: relative;
 		top: 80px;
 		.wrapper{
@@ -915,10 +968,10 @@
 				
 				.btn{
 					color: #fff;
-					background-color: var(--second-color);
-					border: 1px solid var(--second-color);
+					background-color: $second;
+					border: 1px solid $second;
 					&:hover{
-						color: var(--second-color);
+						color: $second;
 						background-color: #fff;
 					}
 				}
@@ -943,14 +996,14 @@
 }
 
 span.wpcf7-not-valid-tip{
-	color:var(--first-color);
+	color:$first;
 	width: 100% !important;
 	font-family: 'Helvetica';
 	margin-bottom: 20px;
 }
 div.wpcf7-response-output{
 	width: 100%;
-	border-color: var(--first-color);
+	border-color: $first;
 	color: #fff;
 	font-family: 'Helvetica';
 	margin: 25px 0;
@@ -985,7 +1038,7 @@ div.wpcf7-response-output{
 			}
 			a:hover{
 				text-decoration: none;
-				color: var(--first-color);
+				color: $first;
 			}
 		}
 		.footer-menu{
@@ -1002,7 +1055,7 @@ div.wpcf7-response-output{
 				}
 				a:hover{
 					text-decoration: none;
-					color: var(--first-color);
+					color: $first;
 				}
 			}
 			li:first-child{
@@ -1020,7 +1073,7 @@ article{
 		margin-bottom: 10px;
 		.entry-title{
 			a{
-				@include text-style(var(--second-color), 24px, 700, 24px);
+				@include text-style($second, 24px, 700, 24px);
 			}
 			
 		}
@@ -1040,7 +1093,7 @@ article{
 				font-size: 20px;
 				span{
 					font-size: 20px;
-					color: var(--second-color);
+					color: $second;
 					text-decoration: underline;
 				}
 			}
@@ -1053,22 +1106,22 @@ article{
 		.search-submit{
 			padding: 3px 15px;
 			background-color: #fff;
-			border: 1px solid var(--second-color);
+			border: 1px solid $second;
 			box-shadow: none;
-			@include text-style(var(--second-color), 16px, 400, 1.43);
+			@include text-style($second, 16px, 400, 1.43);
 			cursor: pointer;
 			transition: 0.4s all ease-out;
 			margin-left: 15px;
 			&:hover{
 				
 				color: #fff;
-				background-color: var(--second-color);
+				background-color: $second;
 			}
 		}
 		label{
 			.search-field{
 				padding: 3px;
-				border: 1px solid var(--second-color);
+				border: 1px solid $second;
 				margin-bottom: 7.5px;
 			}
 		}
@@ -1190,9 +1243,9 @@ label.selectGeneral input[type="radio"]:checked ~ div
 
     overflow-y: auto;
 
-    box-shadow: -1px 0 0 var(--second-color), 1px 0 0 var(--second-color);
-    border-top: 1px solid var(--second-color);
-    border-bottom: 1px solid  var(--second-color);
+    box-shadow: -1px 0 0 $second, 1px 0 0 $second;
+    border-top: 1px solid $second;
+    border-bottom: 1px solid  $second;
 }
 
 label.selectGeneral input[type="radio"]:checked ~ div > label,

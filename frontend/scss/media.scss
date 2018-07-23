@@ -54,8 +54,9 @@
 			.wrapper{
 				.news__item{
 					width: 33.33%;
-					padding: 0 10px;
+					margin: 0 10px;
 					box-sizing: border-box;
+					margin-bottom: 15px;
 				}
 			}
 		}
@@ -124,14 +125,18 @@
 							width: 100%;
 						}
 					}
+					.wpcf7-submit{
+					width: 100% !important;
+				}
 				}
 				.gallery{
 					width: 100% !important;
 					box-sizing: border-box;
 				}
 				.footer-btn{
-					width: 75% !important;
+					width: 75% ;
 				}
+				
 			}
 		}
 		
@@ -177,7 +182,8 @@
 			.wrapper{
 				.news__item{
 					margin-right: 0 !important;
-					padding: 5px;
+					margin:  0 5px;
+					margin-bottom: 15px;
 				}
 			}
 		}
