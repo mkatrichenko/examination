@@ -13,12 +13,9 @@
 
 		<?php if ( have_posts() ) : ?>
 			<div class="text-block">
-            	<h3 class="description">
-            		<?php
-					printf( esc_html__( 'Search Results for: %s', 'examination' ),get_search_query());
-					?>
-            	</h3>
-            	<span class="description"><?php get_search_query(); ?></span>
+            	<div class="title">
+            		<?php the_field('search_title_option', 'option');the_search_query(); ?> 
+            	</div>
           	</div>
 			<?php
 			/* Start the Loop */

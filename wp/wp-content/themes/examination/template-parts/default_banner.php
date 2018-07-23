@@ -1,5 +1,5 @@
 <style type="text/css">
-		<?php $img = get_field('gallery_archive_banner', 'option');?>
+		<?php $img = get_field('default_banner', 'option');?>
 		.page .banner-short {
     		background: url('<?php echo $img['url']; ?>') center no-repeat;
 			background-size: cover;

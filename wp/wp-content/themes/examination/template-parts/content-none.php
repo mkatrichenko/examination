@@ -12,7 +12,7 @@
 <section class="no-results not-found">
 	<header class="text-block">
 		<h1 class="title">
-			<?php esc_html_e( 'Nothing Found', 'examination' ); ?>
+			<?php the_field('search_empty_title', 'option'); ?>
 		</h1>
 	</header><!-- .page-header -->
 
@@ -36,14 +36,17 @@
 		elseif ( is_search() ) :
 			?>
 			<div class="text-block">
-				<div class="description">Sorry, but nothing matched your search terms. Please try again with some different keywords.</div>
+				<div class="description"><?php the_field('search_empty_text', 'option'); ?></div>
 			</div> <?php
 			
 
 		else :
 			?>
-
-			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'examination' ); ?></p>
+			<div class="text-block">
+				<p class="description">
+					<?php the_field('search_empty_var2', 'option'); ?>
+				</p>
+			</div>
 			<?php
 			get_search_form();
 

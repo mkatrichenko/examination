@@ -7,8 +7,8 @@
       <section class="article">
         <div class="wrapper container franchisee">
           <div class="text-block">
-            <h3 class="title">Page Not Found</h3>
-            <p class="description">We're sorry, the page you're looking for could not be found.</p>
+            <h3 class="title"><?php the_field('404_title', 'option'); ?></h3>
+            <p class="description"><?php the_field('404_description', 'option'); ?></p>
           </div>
         </div>
       </section>

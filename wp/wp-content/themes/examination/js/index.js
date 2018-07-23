@@ -9,9 +9,10 @@ jQuery(document).ready(function($){
 $('.feedback-slider').slick({
     infinite: true,
     arrows: false,
+    //slidesToShow: 4,
     slidesToScroll:1,
 	dots: true,
-	adaptiveHeight: true
+	adaptiveHeight: false
 });
 
 

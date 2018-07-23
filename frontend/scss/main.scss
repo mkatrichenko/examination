@@ -476,7 +476,10 @@ $second: #db302c;
 		margin-top: 50px;
 		padding-bottom: 50px;
 		.text-block{
-				max-width: 480px;
+			max-width: 480px;
+			.title{
+				font-size: 28px;
+			}
 			}
 		.wrapper{
 			
@@ -639,6 +642,12 @@ $second: #db302c;
 						p{
 							display: inline;
 							margin: 0;
+						}
+						mark{
+							background-color: $first;
+						}
+						code{
+							font-family: 'Helvetica';
 						}
 					}
 					.link{
@@ -955,13 +964,17 @@ $second: #db302c;
 				box-sizing: border-box;
 				width: auto;
 				text-align: left;
+				width: inherit;
+				max-width: 700px;
 				.title{
 					font-family: "Eurostile";
 					@include text-style(#000, 38px, 400, 1);
+					margin: 0;
 				}
 				.description{
 					@include text-style(#000, 16px, 700, 1);
 					font-family: 'Helvetica';
+					margin: 0;
 				}
 			}
 			.left{
