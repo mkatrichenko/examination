@@ -91,6 +91,7 @@ $second: #db302c;
 			&__item{
 				margin-right: 23px;
 				position: relative;
+				width: inherit;
 				&:last-child{
 					margin-right: 0;
 				}
@@ -100,6 +101,7 @@ $second: #db302c;
 					font-family: 'Helvetica';
 					cursor: pointer;
 					transition: 0.4s all ease-out;
+					margin: 0 !important;
 				}
 				a:hover{
 					color: $first;
@@ -642,22 +644,15 @@ $second: #db302c;
 					position: relative;
 					top: -5px;
 					z-index: 2;
-					.title{
-						@include text-style(#000, 28px, 400, 1);
-						font-family: "Eurostile";
-					}
+					@include wysiwyg();
 					.description{
-						@include text-style(#000, 16px, 400, 24px);
-						font-family: 'Helvetica';
-						p{
-							display: inline;
-							margin: 0;
-						}
-						mark{
-							background-color: $first;
-						}
-						code{
-							font-family: 'Helvetica';
+						h1, h2, h3, h4, h5, h6{
+							color: #000;
+							font-family: "Eurostile";
+							line-height: 1.23;
+							margin: 17px 0;
+							margin-top: 0;
+							padding: 0;
 						}
 					}
 					.link{
@@ -1223,4 +1218,18 @@ article{
 	}
 }
 
+.page404{
+	text-align: left;	
+	width: 100%;
+}
+
+.gallery-archive{
+	top: 0 !important;
+	.wrapper{
+		.gallery{
+			max-width: none;
+			width: 100% !important;
+		}
+	}
+}
 @import 'media';

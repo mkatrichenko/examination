@@ -8,7 +8,8 @@
 			  	$link = get_field('news_link');
 				while ( $loop->have_posts() ) : $loop->the_post();?>
             <?php 
-				$date = get_field('date', false, false);
+				$date = get_field('news_date', false, false);
+			
 				$date = new DateTime($date);
 			?>
             <div class="news__item grid">
@@ -21,9 +22,8 @@
             	<img src="<?php echo $img; ?>" alt="News image">
             </div>
             <div class="news__item-text">
-              <div class="title"><?php the_title(); ?></div>
               <div class="description">
-                <p><?php the_field('text'); ?></p>
+                <?php the_content(); ?>
                 <a class="link" href='<?php the_permalink(); ?>'><?php echo $link; ?></a>
               </div>
             </div>

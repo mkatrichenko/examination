@@ -12,7 +12,7 @@
 <section class="no-results not-found">
 	<header class="text-block">
 		<h1 class="title">
-			<?php the_field('search_empty_title', 'option'); ?>
+			<?php the_field('search_title_empty', 'option'); ?>
 		</h1>
 	</header><!-- .page-header -->
 
