@@ -1,13 +1,14 @@
 @import 'mixines';
 
 @media only screen and (max-width : 1200px){
-		.container{
+	.container{
 			max-width: 960px;
 		}
 	
 	.grid{
 		margin-right: 0px;
 	}
+	
 	.wrapper{
 		justify-content: space-between;
 	}
@@ -37,7 +38,6 @@
 	}
 	
 	.page{
-		
 		.works{
 			
 			.wrapper{
@@ -282,6 +282,7 @@
 		}
 	}
 	}
+	
 	.banner{
 		padding: 15px 0;
 		box-sizing: border-box;
@@ -291,6 +292,7 @@
 			}
 		}
 	}
+	
 	.page{
 		.search{
 			.wrapper{
@@ -320,6 +322,10 @@
 				.works__item{
 					width: 100%;
 					max-width: 100%;
+					
+					&-avatar{
+						
+					}
 				}
 			}
 		}
@@ -334,8 +340,6 @@
 				}
 			}
 		}
-		
-		
 		.article{
 			
 			.wrapper{
@@ -364,6 +368,7 @@
 			}
 		}
 	}
+	
 	.footer{
 		padding-bottom: 0px;
 			.wrapper{
@@ -388,6 +393,7 @@
 	.text-block{
 		width: 100%;
 	}
+	
 	.banner{
 		.wrapper{
 			.content{
@@ -473,9 +479,7 @@
 		}
 	}
 	
-	
-	.page{
-		
+	.page{		
 		.search{
 			
 			.wrapper{
@@ -537,7 +541,6 @@
 }
 
 @media only screen and (max-width : 400px){
-	
 	.page{
 		
 		.contact-block{
@@ -552,7 +555,6 @@
 			}
 		}
 	}
-
 }
 
 

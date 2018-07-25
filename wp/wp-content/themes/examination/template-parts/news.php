@@ -5,7 +5,6 @@
         <div class="wrapper container">
          	<?php $args = array( 'post_type' => 'news', 'posts_per_page' => 10 );
 				$loop = new WP_Query( $args );
-			  	$save = $post;
 			  	$link = get_field('news_link');
 				while ( $loop->have_posts() ) : $loop->the_post();?>
             <?php 
@@ -30,7 +29,8 @@
             </div>
             <div class="author"> BY <?php  $auth = get_the_author(); echo $auth ?></div>
           </div>
-			<?php $post = $save;endwhile; ?>
+			<?php endwhile;
+			wp_reset_postdata();?>
         </div>
         <a class="btn" ><?php the_field('news_button')?></a>
       </section>

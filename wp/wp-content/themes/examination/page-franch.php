@@ -6,9 +6,11 @@
 			background-size: cover;
 		}
 	</style>
-     <div class="page">
+     <div class="page franchisee">
       <section class="banner-short franch"></section>
       <?php get_template_part( 'template-parts/navigation');?>
+      <?php get_template_part( 'template-parts/article');?>
+<!--
       <section class="article">
         <div class="wrapper container franchisee">
           <div class="text-block">
@@ -33,6 +35,7 @@
           </div>
         </div>
       </section>
+-->
       <section class="advertisement">
         <div class="wrapper container">
           <div class="text-block">

@@ -283,25 +283,25 @@ function filter_nav_menu_submenu_css_class( $classes, $args, $depth ) {
 add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );
 function filter_nav_menu_link_attributes( $atts, $item, $args, $depth ) {
 	if ( $args->theme_location === 'top-header-menu' ) {
-		$atts['class'] = 'menu-link';
+		$atts['class'] = 'menu__item';
 		if ( $item->current ) {
 			$atts['class'] .= 'active';
 		}
 	}
 	if ( $args->theme_location === 'bottom-header-menu' ) {
-		$atts['class'] = 'menu-link';
+		$atts['class'] = 'menu__item';
 		if ( $item->current ) {
 			$atts['class'] .= 'active';
 		}
 	}
 	if ( $args->theme_location === 'footer-menu' ) {
-		$atts['class'] = 'menu-link';
+		$atts['class'] = 'menu__item';
 		if ( $item->current ) {
 			$atts['class'] .= 'active';
 		}
 	}
 	if ( $args->theme_location === 'mobile-menu' ) {
-		$atts['class'] = 'menu-link';
+		$atts['class'] = 'menu__item';
 		if ( $item->current ) {
 			$atts['class'] .= 'active';
 		}
@@ -318,3 +318,10 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 
 //new icon type
 add_image_size( 'small', 130, 130, true );
+
+
+//wysiwyg "p" wrap fix
+remove_filter( 'the_content', 'wpautop' );
+
+//new thumbnail size add
+add_image_size( 'post_list', 130, 130, true );

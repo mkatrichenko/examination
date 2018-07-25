@@ -4,3 +4,133 @@
 	font-weight: $font-weight;
 	line-height: $line-height;
 }
+
+
+@mixin wysiwyg(){
+	.entry-content img {
+ 		margin: 0 0 1.5em 0;
+ 	}
+	.alignleft, img.alignleft {
+ 		margin-right: 1.5em;
+ 		display: block;
+ 		float: left;
+ 	}
+	.alignright, img.alignright {
+ 		margin-left: 1.5em;
+ 		display: block;
+ 		float: right;
+ 	}
+	.aligncenter, img.aligncenter {
+ 		margin-right: auto;
+ 		margin-left: auto;
+ 		display: inline;
+ 		clear: both;
+ 	}
+	.alignnone, img.alignnone {
+ /* not sure about this one */
+ 	}
+	.wp-caption {
+ 		margin-bottom: 1.5em;
+ 		text-align: center;
+ 		padding-top: 5px;
+ 	}
+	.wp-caption img {
+ 		border: 0 none;
+ 		padding: 0;
+ 		margin: 0;
+ 	}
+	.wp-caption p.wp-caption-text {
+ 		line-height: 1.5;
+ 		font-size: 10px;
+ 		margin: 0;
+ 	}
+	.wp-smiley {
+ 		margin: 0 !important;
+ 		max-height: 1em;
+ 	}
+	blockquote.left {
+ 		margin-right: 20px;
+ 		text-align: right;
+ 		margin-left: 0;
+ 		width: 33%;
+ 		float: left;
+ 	}
+	blockquote.right {
+ 		margin-left: 20px;
+ 		text-align: left;
+ 		margin-right: 0;
+ 		width: 33%;
+ 		float: right;
+ 	}
+			
+			h1{
+				@include text-style($second, 40px, 700, 23px);
+				display: block;
+				padding: 5px 0;
+			}
+			h2{
+				@include text-style($second, 34px, 400, 23px);
+				display: block;
+				padding: 5px 0;
+			}
+			h3{
+				@include text-style($second, 28px, 400, 23px);
+				display: block;
+				padding: 5px 0;
+			}
+			h4{
+				@include text-style($second, 24px, 400, 23px);
+				display: block;
+				padding: 5px 0;
+			}
+			h5{
+				display: block;
+				padding: 5px 0;
+				@include text-style($second, 20px, 400, 23px);
+			}
+			h6{
+				@include text-style($second, 18px, 400, 23px);
+				display: block;
+				padding: 5px 0;
+			}
+			p{
+				@include text-style(#000, 16px, 400, 23px);
+				
+				display: block;
+				padding-bottom: 23px;
+			}
+			span{
+				@include text-style(#000, 14px, 300, 1);
+				display: inline;
+				font-family: 'Eurostile';
+			}
+			mark{
+				background-color: $first;
+			}
+			a{
+				color: $second;
+				cursor: pointer;
+			}
+			a:hover{
+				text-decoration: underline;
+			}
+			img{
+				max-width: 100%;
+				height: auto;;
+				margin-bottom: 20px;
+			}
+			h1, h2, h3, h4, h5, h6{
+				margin-bottom: 26px;
+				width: inherit;
+			}
+			ul{
+				list-style-type: disc !important;
+				li{
+					display: list-item;
+					text-decoration: inherit;
+					list-style-type: disc;
+					list-style-position: inside;
+				}
+			}
+	
+}

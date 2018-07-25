@@ -5,7 +5,7 @@
       <?php get_template_part( 'template-parts/navigation');?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-		<div class="wrapper container">
+		<div class="wrapper container search-page">
 			<div class="text-block">
 				<div class="title">
 					<?php the_archive_title() ?>
@@ -13,7 +13,7 @@
 			</div>
 			<?php get_search_form(); ?>
 		</div>
-		
+		<div class="wrapper container ">
 		<?php if ( have_posts() ) : ?>
 
 
@@ -39,7 +39,7 @@
 
 		endif;
 		?>
-
+		</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	

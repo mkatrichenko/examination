@@ -2,12 +2,13 @@
 <div class="page">
       <?php get_template_part( 'template-parts/default_banner');?>
       <?php get_template_part( 'template-parts/navigation');?>
-      <div class="wrapper container">
+      <div class="wrapper container search-page">
       	<div class="text-block">
 			<div class="title">Search page</div>
 		</div>
      	<?php get_search_form(); ?>
       </div>
+      <div class="wrapper container">
       	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -42,6 +43,7 @@
 
 		</main><!-- #main -->
 	</section>
+	</div>
 	<?php get_template_part( 'template-parts/works');?>
     <?php get_template_part( 'template-parts/search');?>
     <?php get_template_part( 'template-parts/contact-gallery');?>
