@@ -2754,8 +2754,9 @@ article .entry-footer .edit-link a span {
     padding: 35px 0;
   }
 
-  .page .article .franchisee .avatar {
-    width: 50%;
+  .page .article .wrapper img {
+    float: none !important;
+    margin: 0 auto !important;
   }
 
   .page .works .wrapper {
