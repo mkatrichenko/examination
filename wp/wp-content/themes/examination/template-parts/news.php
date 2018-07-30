@@ -32,5 +32,5 @@
 			<?php endwhile;
 			wp_reset_postdata();?>
         </div>
-        <a class="btn" ><?php the_field('news_button')?></a>
+        <a class="btn" href='<?php the_field('news_button_link') ?>'><?php the_field('news_button')?></a>
       </section>

@@ -69,8 +69,9 @@
 	}
 	
 	.grid{
-		width: 350px !important;
+		max-width: 350px;
 		margin-right: 25px;
+		width: 35px;
 		&:nth-child(3n){
 			margin-right: auto;
 		}
@@ -154,6 +155,9 @@
 		
 		.article{
 			.wrapper{
+				h6, h5, h4, h3, h2, h1{
+					margin-top: 25px;
+				}
 				img{
 					float: none !important;
 					margin: 0 auto !important;
@@ -198,7 +202,7 @@
 	}
 	
 	.grid{
-		width: 100%;
+		width: 100% !important;
 		margin-right: 0 !important;
 	}
 	
@@ -245,7 +249,7 @@
 				margin-top: 0;
 				.menu__container{
 					position: absolute;
-					right: 25px;
+					right: 0;
 					top: 50px;
 					display: flex;
 					flex-direction: column;
@@ -342,30 +346,6 @@
 		}
 		.article{
 			
-			.wrapper{
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				.avatar{
-					width: 100%;
-					//padding: 0 25px;
-					box-sizing: border-box;
-				}
-				.text-block{
-					width: 100%;
-					//padding: 0 25px;
-					padding-top: 35px;
-					box-sizing: border-box;
-				}
-			}
-			.franchisee{
-				flex-direction: column-reverse;
-				
-				.avatar{
-					padding: 0;
-					margin: 0;
-				}
-			}
 		}
 	}
 	
@@ -408,14 +388,26 @@
 			.wrapper{
 				height: inherit;
 				.text-block{
-					margin-bottom: 85px;
+					margin-bottom: 100px;
 					.title{
 						white-space: normal;
 						line-height: 40.8px;
+						margin-bottom: 15px;
 					}
 					.description{
 						white-space: normal;
 					}
+				}
+			}
+		}
+		
+		.works{
+			
+			.wrapper{
+				.works__item{
+					width: 100%;
+					max-width: none;
+					margin-bottom: 25px;
 				}
 			}
 		}
@@ -466,9 +458,11 @@
 				.text{
 					
 					p{
+						line-height: 1.23;
 						font-size: 20px;
 					}
 					span{
+						line-height: 1.23;
 						font-size: 20px;
 					}
 				}
@@ -485,12 +479,8 @@
 			.wrapper{
 				padding: 0 15px;
 				.text-block{
-					//padding-top: 80px;
-					//padding-left: 0;
-					//width: 100%;
-					//margin-bottom: 12px;
 					height: inherit;
-					margin-bottom: 0;
+					margin-bottom: 25px;
 					.title{
 						font-size: 30px;
 						line-height: 1;

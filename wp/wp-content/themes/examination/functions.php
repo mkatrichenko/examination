@@ -182,8 +182,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 
-update_option('siteurl', 'http://dyplom');
-update_option('home', 'http://dyplom');
+update_option('siteurl', 'http://20r61u9b.idua.org');
+update_option('home', 'http://20r61u9b.idua.org');
 
 
 
@@ -192,10 +192,10 @@ update_option('home', 'http://dyplom');
 
 add_action( 'after_setup_theme', function () {
 	register_nav_menus( [
-		'top-header-menu' => 'Верхняя область',
-		'bottom-header-menu' => 'Нижняя область',
-		'footer-menu' => 'Подвальная область',
-		'mobile-menu' => 'Мобильное меню'
+		'top-header-menu' => 'Top header place',
+		'bottom-header-menu' => 'Bottom header place',
+		'footer-menu' => 'Footer place',
+		'mobile-menu' => 'Mobile menu'
 	] );
 } );
 // Изменяет основные параметры меню
@@ -321,7 +321,7 @@ add_image_size( 'small', 130, 130, true );
 
 
 //wysiwyg "p" wrap fix
-remove_filter( 'the_content', 'wpautop' );
+//remove_filter( 'the_content', 'wpautop' );
 
 //new thumbnail size add
 add_image_size( 'post_list', 130, 130, true );

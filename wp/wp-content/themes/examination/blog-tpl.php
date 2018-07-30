@@ -15,12 +15,18 @@ get_header(); ?>
  						<ul>
         				<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 							<li>
-								<div class="box">
+								<a href="<?php the_permalink(); ?>">
 									<?php the_post_thumbnail('post_list');?>
-									<a href="<?php the_permalink(); ?>">
-									<?php the_title(); ?></a>
+								</a>
+								<div class="text-block">
+									<a class='title' href="<?php the_permalink(); ?>">
+										<?php the_title(); ?>
+									</a>
+									<p class="description">
+										<?php the_excerpt() ?>
+									</p>
 								</div>
-							<?php the_excerpt() ?></li>
+							</li>
 						<?php endwhile; ?>
 						</ul>
   					<?php wp_reset_postdata(); ?>

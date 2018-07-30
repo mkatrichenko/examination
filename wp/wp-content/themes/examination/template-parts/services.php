@@ -25,5 +25,10 @@
 				 wp_reset_postdata()
 			?>  
           <div class="line container"></div>
-        </div><a class="btn" href="<?php the_field('services_link')?>"><?php the_field('services_button');?></a>
+          
+        </div>
+        <?php if (is_front_page()) : ?>
+        	<a class="btn" href="<?php the_field('services_link')?>"><?php the_field('services_button');?>
+        	</a>
+        <?php endif ?>
       </section>

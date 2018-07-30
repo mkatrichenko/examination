@@ -9,7 +9,7 @@
       <?php get_template_part( 'template-parts/default_banner');?>
       <?php get_template_part( 'template-parts/navigation');?>
       <div class="wrapper container">
-      	<div class="text-block">
+      	<div class="text-block single">
       		<div class="title"><?php the_title() ?></div>
       		<div class="avatar">
       			<?php the_post_thumbnail(); ?>

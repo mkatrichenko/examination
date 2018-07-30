@@ -10,11 +10,13 @@
  						<ul>
         				<?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
 							<li>
-								<div class="box">
+								<a href="<?php the_permalink(); ?>">
+									<div class="box">
 									<?php the_post_thumbnail('post_list');?>
 									<a href="<?php the_permalink(); ?>">
 									<?php the_title(); ?></a>
 								</div>
+								</a>
 							<?php the_excerpt() ?></li>
 						<?php endwhile; ?>
 						</ul>
