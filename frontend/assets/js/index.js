@@ -12,9 +12,41 @@ $('.feedback-slider').slick({
     //slidesToShow: 4,
     slidesToScroll:1,
 	dots: true,
-	adaptiveHeight: true
+	adaptiveHeight: false,
+	focusOnSelect: true
 });
 
-
+	
+	
+	
+	function wrapAdd(arg){
+		for (i=0; i<arg.length; i++){
+		var temp = arg[i].getElementsByTagName('iframe');
+		if (temp.length != 0){
+			arg[i].className = 'frame-wrapper';
+		};
+	};
+	}
+	
+	var article = $('.article .wrapper')[0];
+	if (article){
+		var wrap = article.getElementsByTagName('P');
+		if (wrap != null){
+			wrapAdd(wrap);
+		};
+	};
+	
+	
+	
+	var news = $('.news .wrapper .news__item');
+	for (i=0; i<news.length; i++){
+		var newsItem = news[i].getElementsByTagName('P');
+		if (wrap != null){
+			wrapAdd(newsItem);
+		};
+		
+	}
+	
+	
 
 });
